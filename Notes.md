@@ -36,7 +36,14 @@ O módulo é nomeado na exportação. Se tentarmos renomeá-lo a aplicação nã
 # Componentes
 
 Blocos de código que podem ser reutilizados e, por serem pequenos, são mais fáceis de manter.
+São sempre são nomeados com letra maiúscula.
 
 # Propriedades
 
 São informações que podem ser passadas para os componentes. São sempre passadas como objeto.
+
+# Escopo CSS
+
+Em React usamos Scoped CSS, ou seja, o CSS é exclusivo para o componente.
+Para evitar conflitos, CSS modules, SAAS e Styled-Components criam um hash que torna o nome da classe
+único. Evitando conflitos.
