@@ -46,8 +46,16 @@ export function Post(props: PostType) {
 
   const handleNewCommentChange = function () {
     const element = event?.target as HTMLTextAreaElement;
+    element.setCustomValidity("");
     setNewCommentText(element.value);
   };
+
+  const handleNewCommentInvalid = function () {
+    const element = event?.target as HTMLTextAreaElement;
+    element.setCustomValidity("Esse campo é obrigatório.");
+  };
+
+  const isNewCommentEmpty = newCommentText.length === 0;
 
   return (
     <article className={styles.post}>
@@ -76,9 +84,13 @@ export function Post(props: PostType) {
           value={newCommentText}
           name="comment"
           placeholder="Deixe um comentário"
+          onInvalid={handleNewCommentInvalid}
+          required
         />
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publicar
+          </button>
         </footer>
       </form>
 
