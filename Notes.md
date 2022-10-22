@@ -47,3 +47,10 @@ São informações que podem ser passadas para os componentes. São sempre passa
 Em React usamos Scoped CSS, ou seja, o CSS é exclusivo para o componente.
 Para evitar conflitos, CSS modules, SAAS e Styled-Components criam um hash que torna o nome da classe
 único. Evitando conflitos.
+
+# Componentes
+
+- Quando trecho de código se repete muito no código
+
+- Pode remover parte de componente maior sem interromper o seu funcionamento. A ideia é compartibililizar código para que seja possível
+  dar manutenção nas partes específicas.
