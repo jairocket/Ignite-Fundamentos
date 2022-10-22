@@ -72,3 +72,16 @@ Quais as condições para obter o resultado final.
 _keys servem para criar referências para os itens da lista renderizada. Deste modo, quando o componente é rerenderizado, o React compara as keys que já faziam parte da lista e renderiza apenas os itens com keys novas. Por esta razão, as keys precisam ser únicas._
 
 O índice do array não deve ser utilizado, apesar de ser único, pois, se por algum motivo, for necessário trocar a posição dos itens do array, os índices não serão atualizados. Isso gera rerenderização desnecessária, pois o React interpreta como alteração.
+
+Sempre for atualizar uma informação e a nova informação depende do estado anterior desta informação, é bom criar uma arrow function. Desta forma, é possível manipular a versão mais recente do estado da informação.
+
+```js
+function Comment(props) {
+  const [likes, setLikes] = useState(0);
+  //se na chamada de setLike, passássemos like + 1, ao chamarmos a função várias vezes, o react manipularia a versão antiga do estado e a função aumentaria o número de likes de um em um. Utilizando a sintaxe abaixo, handleLike aumentará o número de likes de dois em dois.
+  function handleLike() {
+    setLike((state) => state + 1);
+    setLike((state) => state + 1);
+  }
+}
+```
