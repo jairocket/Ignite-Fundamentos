@@ -31,14 +31,17 @@ export function Post(props: PostType) {
     addSuffix: true,
   });
 
+  const deleteComment = function (commentToDelete: string) {
+    const commentsWithoutDeleledOne = comments.filter(
+      (comment) => comment !== commentToDelete
+    );
+    setComments(commentsWithoutDeleledOne);
+  };
+
   const handleCreateNewComment = function () {
     event?.preventDefault();
-    //const element = event?.target as HTMLFormElement;
-    //const newComment = element.comment.value;
     setComments([...comments, newCommentText]);
     setNewCommentText("");
-    //element.comment.value = "";
-    //console.log(newComment);
   };
 
   const handleNewCommentChange = function () {
@@ -81,7 +84,11 @@ export function Post(props: PostType) {
 
       <div className={styles.commentList}>
         {comments.map((comment) => (
-          <Comment key={comment} content={comment} />
+          <Comment
+            onDeleteComment={deleteComment}
+            key={comment}
+            content={comment}
+          />
         ))}
       </div>
     </article>

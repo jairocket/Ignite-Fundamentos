@@ -62,3 +62,13 @@ O que deve ser feito, passo a passo. Ex. Receita de bolo.
 # Programação declarativa
 
 Quais as condições para obter o resultado final.
+
+# 3 momentos em que um componente é renderizado novamente:
+
+- Quando o estado é alterado;
+- Quando a propriedade altera;
+- Quando um componente pai renderiza novamente.
+
+_keys servem para criar referências para os itens da lista renderizada. Deste modo, quando o componente é rerenderizado, o React compara as keys que já faziam parte da lista e renderiza apenas os itens com keys novas. Por esta razão, as keys precisam ser únicas._
+
+O índice do array não deve ser utilizado, apesar de ser único, pois, se por algum motivo, for necessário trocar a posição dos itens do array, os índices não serão atualizados. Isso gera rerenderização desnecessária, pois o React interpreta como alteração.
