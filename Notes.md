@@ -54,3 +54,11 @@ Para evitar conflitos, CSS modules, SAAS e Styled-Components criam um hash que t
 
 - Pode remover parte de componente maior sem interromper o seu funcionamento. A ideia é compartibililizar código para que seja possível
   dar manutenção nas partes específicas.
+
+# Programação imperativa
+
+O que deve ser feito, passo a passo. Ex. Receita de bolo.
+
+# Programação declarativa
+
+Quais as condições para obter o resultado final.
