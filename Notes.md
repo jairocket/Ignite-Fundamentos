@@ -85,3 +85,11 @@ function Comment(props) {
   }
 }
 ```
+
+# TypeScript
+
+- Superset que torna a tipagem dinâmica do JavaScript em tipagem dinâmica. Isso evita bugs, no sentido de que garante que funções retornem valores ou recebam parâmetros do tipo de dado necessários para funcionamento correto.
+
+- Além disso, quando funções recebem objetos, é possível estabelecer a estrutura do objeto e o TypeScript avisa quanto as propriedades necessárias.
+
+- O TypeScript é capaz de inferir a tipagem das variáveis a partir do retorno da função ou pelo estado inicial no react

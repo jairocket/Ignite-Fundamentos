@@ -1,4 +1,3 @@
-//@ts-ignore
 import styles from "./Post.module.css";
 import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
@@ -16,17 +15,17 @@ interface PostType {
   content: string;
 }
 
-export function Post(props: PostType) {
+export function Post({ author, publishedAt, content }: PostType) {
   const [comments, setComments] = useState(["Post muito bacana, hein?"]);
   const [newCommentText, setNewCommentText] = useState("");
 
   const publishedAtFormatted = format(
-    props.publishedAt,
+    publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
     { locale: ptBR }
   );
 
-  const publishedAtRelativeToNow = formatDistanceToNow(props.publishedAt, {
+  const publishedAtRelativeToNow = formatDistanceToNow(publishedAt, {
     locale: ptBR,
     addSuffix: true,
   });
@@ -61,21 +60,18 @@ export function Post(props: PostType) {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar src={props.author.avatarUrl} />
+          <Avatar src={author.avatarUrl} />
           <div className={styles.authorInfo}>
-            <strong>{props.author.name}</strong>
-            <span>{props.author.role}</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
-        <time
-          title={publishedAtFormatted}
-          dateTime={props.publishedAt.toISOString()}
-        >
+        <time title={publishedAtFormatted} dateTime={publishedAt.toISOString()}>
           {publishedAtRelativeToNow}
         </time>
       </header>
       <div className={styles.content}>
-        {props.content} <a href="">#novoprojeto</a> <a href="">#nlw</a>
+        {content} <a href="">#novoprojeto</a> <a href="">#nlw</a>
       </div>
       <form onSubmit={handleCreateNewComment} className={styles.comentForm}>
         <strong>Deixe seu feedback</strong>

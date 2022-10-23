@@ -1,4 +1,3 @@
-//@ts-ignore
 import styles from "./Comment.module.css";
 import { ThumbsUp, Trash } from "phosphor-react";
 import { Avatar } from "./Avatar";
@@ -9,11 +8,11 @@ interface CommentProp {
   onDeleteComment: (comment: string) => void;
 }
 
-export function Comment(props: CommentProp) {
+export function Comment({ content, onDeleteComment }: CommentProp) {
   const [likeCount, setLikeCount] = useState(0);
 
   const handleDeleteComment = function () {
-    props.onDeleteComment(props.content);
+    onDeleteComment(content);
   };
 
   const handleLikeComment = function () {
@@ -39,7 +38,7 @@ export function Comment(props: CommentProp) {
               <Trash size={24} />
             </button>
           </header>
-          {props.content}
+          {content}
         </div>
         <footer>
           <button onClick={handleLikeComment}>

@@ -3,7 +3,7 @@ import { Post } from "./components/Post";
 import { Sidebar } from "./components/Sidebar";
 
 import "./global.css";
-//@ts-ignore
+
 import styles from "./App.module.css";
 
 const posts = [

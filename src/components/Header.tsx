@@ -1,6 +1,5 @@
-//@ts-ignore
 import styles from "./Header.module.css";
-//@ts-ignore
+
 import igniteLogo from "../assets/ignite-logo.svg";
 
 export function Header() {
