@@ -1,7 +1,9 @@
 import styles from "./Avatar.module.css";
+import { ImgHTMLAttributes } from "react";
 
-interface AvatarProps {
-  src: string;
+//Interface Avatar herda todas as propriedades de uma tag <img/>
+
+interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   hasBorder?: boolean;
 }
 
